@@ -1,0 +1,416 @@
+body {
+	font-family: sans-serif;
+    font-size: small;
+	margin: 0;
+    height: 100%;
+}
+
+#map {
+	width: 105%; height:100vh;
+}
+.leaflet-marker-icon {
+    width: auto !important;
+    height: auto !important;
+}
+.cluster { 
+    padding: 5px 10px;
+    color: white;
+}
+
+.layer0 {
+    background: red;
+}
+.layer1 {
+    background: blue;
+}
+.layer2 {
+    background: cyan;
+    color: black;
+}
+.layer3 {
+    background: orange;
+    color: cyan;
+}
+.layer5 {
+  background: #85007b;
+}
+
+.layer6 {
+  background: #86007a;
+}
+
+.layer7 {
+  background: #880078;
+}
+
+.layer8 {
+  background: #890077;
+}
+
+.layer9 {
+  background: #8a0076;
+}
+
+.layer10 {
+  background: #8c0074;
+}
+
+.layer11 {
+  background: #8d0073;
+}
+
+.layer12 {
+  background: #8e0072;
+}
+
+.layer13 {
+  background: #8f0070;
+}
+
+.layer14 {
+  background: #91006f;
+}
+
+.layer15 {
+  background: #92006e;
+}
+
+.layer16 {
+  background: #93006d;
+}
+
+.layer17 {
+  background: #95006b;
+}
+
+.layer18 {
+  background: #96006a;
+}
+
+.layer19 {
+  background: #970069;
+}
+
+.layer20 {
+  background: #980067;
+}
+
+.layer21 {
+  background: #9a0066;
+}
+
+.layer22 {
+  background: #9b0065;
+}
+
+.layer23 {
+  background: #9c0064;
+}
+
+.layer24 {
+  background: #9e0062;
+}
+
+.layer25 {
+  background: #9f0061;
+}
+
+.layer26 {
+  background: #a00060;
+}
+
+.layer27 {
+  background: #a1005e;
+}
+
+.layer28 {
+  background: #a3005d;
+}
+
+.layer29 {
+  background: #a4005c;
+}
+
+.layer30 {
+  background: #a5005b;
+}
+
+.layer31 {
+  background: #a60059;
+}
+
+.layer32 {
+  background: #a80058;
+}
+
+.layer33 {
+  background: #a90057;
+}
+
+.layer34 {
+  background: #aa0055;
+}
+
+.layer35 {
+  background: #ac0054;
+}
+
+.layer36 {
+  background: #ad0053;
+}
+
+.layer37 {
+  background: #ae0051;
+}
+
+.layer38 {
+  background: #af0050;
+}
+
+.layer39 {
+  background: #b1004f;
+}
+
+.layer40 {
+  background: #b2004e;
+}
+
+.layer41 {
+  background: #b3004c;
+}
+
+.layer42 {
+  background: #b5004b;
+}
+
+.layer43 {
+  background: #b6004a;
+}
+
+.layer44 {
+  background: #b70048;
+}
+
+.layer45 {
+  background: #b80047;
+}
+
+.layer46 {
+  background: #ba0046;
+}
+
+.layer47 {
+  background: #bb0045;
+}
+
+.layer48 {
+  background: #bc0043;
+}
+
+.layer49 {
+  background: #be0042;
+}
+
+.layer50 {
+  background: #bf0041;
+}
+
+.layer51 {
+  background: #c0003f;
+}
+
+.layer52 {
+  background: #c1003e;
+}
+
+.layer53 {
+  background: #c3003d;
+}
+
+.layer54 {
+  background: #c4003b;
+}
+
+.layer55 {
+  background: #c5003a;
+}
+
+.layer56 {
+  background: #c70039;
+}
+
+.layer57 {
+  background: #c80038;
+}
+
+.layer58 {
+  background: #c90036;
+}
+
+.layer59 {
+  background: #ca0035;
+}
+
+.layer60 {
+  background: #cc0034;
+}
+
+.layer61 {
+  background: #cd0032;
+}
+
+.layer62 {
+  background: #ce0031;
+}
+
+.layer63 {
+  background: #d00030;
+}
+
+.layer64 {
+  background: #d1002f;
+}
+
+.layer65 {
+  background: #d2002d;
+}
+
+.layer66 {
+  background: #d3002c;
+}
+
+.layer67 {
+  background: #d5002b;
+}
+
+.layer68 {
+  background: #d60029;
+}
+
+.layer69 {
+  background: #d70028;
+}
+
+.layer70 {
+  background: #d90027;
+}
+
+.layer71 {
+  background: #da0025;
+}
+
+.layer72 {
+  background: #db0024;
+}
+
+.layer73 {
+  background: #dc0023;
+}
+
+.layer74 {
+  background: #de0022;
+}
+
+.layer75 {
+  background: #df0020;
+}
+
+.layer76 {
+  background: #e0001f;
+}
+
+.layer77 {
+  background: #e1001e;
+}
+
+.layer78 {
+  background: #e3001c;
+}
+
+.layer79 {
+  background: #e4001b;
+}
+
+.layer80 {
+  background: #e5001a;
+}
+
+.layer81 {
+  background: #e70019;
+}
+
+.layer82 {
+  background: #e80017;
+}
+
+.layer83 {
+  background: #e90016;
+}
+
+.layer84 {
+  background: #ea0015;
+}
+
+.layer85 {
+  background: #ec0013;
+}
+
+.layer86 {
+  background: #ed0012;
+}
+
+.layer87 {
+  background: #ee0011;
+}
+
+.layer88 {
+  background: #f00010;
+}
+
+.layer89 {
+  background: #f1000e;
+}
+
+.layer90 {
+  background: #f2000d;
+}
+
+.layer91 {
+  background: #f3000c;
+}
+
+.layer92 {
+  background: #f5000a;
+}
+
+.layer93 {
+  background: #f60009;
+}
+
+.layer94 {
+  background: #f70008;
+}
+
+.layer95 {
+  background: #f90006;
+}
+
+.layer96 {
+  background: #fa0005;
+}
+
+.layer97 {
+  background: #fb0004;
+}
+
+.layer98 {
+  background: #fc0003;
+}
+
+.layer99 {
+  background: #fe0001;
+}
+
+.layer100 {
+  background: red;
+}
