@@ -1,0 +1,92 @@
+Problem statement (PS NUMBER: NM394):
+Air pollution hot spots detection and identifying the source trajectories using ML/AI techniques
+
+At present, air pollution is a global problem. India is also a big sufferer of this problem. India signed COP21 agreement for cutting the carbon emissions from 2025. Hence a study identifying the hot spots of pollutants and their transport namely carbon monoxide (CO), sulphur dioxide (SO2) and oxides of nitrogen (NO+NO2) using advanced data analysis techniques.
+
+Satellite provides columnar concentration of these pollutants which are 90% representation of surface concentrations. Pollution sources are mainly from the land surface activities. Satellite provides these observations on daily basis with different spatial resolutions. Challenges involved in the current statement is mining the datasets from different satellites parameters and providing the final output with moderate spatial resolution on pollution information. Hence information will be useful for change detection analysis. Identification of source pathways.
+
+Participants must develop AI/ML based software/algorithm to identify/analyse 1. Location of hot spots. 2. Long-term occurrence of hot spots and changes. 
+Dataset Links: Satellite based data (freely available), Sentinel-5p/TROPOMI (https://s5phub.copernicus.eu/dhus/#/home), MOPITT (https://eosweb.larc.nasa.gov/project/mopitt/mopitt_table), Aura/OMI (https://giovanni.gsfc.nasa.gov/giovanni/#service=TmAvMp&starttime=&endtime=&dataKeyword=Ozone) and
+Winds (https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=form; https://giovanni.gsfc.nasa.gov/giovanni/#service=TmAvMp&starttime=&endtime=&variableFacets=dataFieldMeasurement%3AWind%3B)
+
+Problem description: https://thewire.in/environment/how-satellites-are-changing-the-way-we-track-pollution-on-the-ground
+(This even has european hotspot images which can be referenced!)
+
+Last year hackathon stats: https://www.isro.gov.in/isro-dos-organizes-world%E2%80%99s-biggest-smart-india-hackathon-2019-grand-final
+
+Prerequisite:
+https://arset.gsfc.nasa.gov/webinars/fundamentals-remote-sensing (Fundamentals of Remote Sensing)
+
+Spaceborne Nitrogen Dioxide Observations from the Sentinel-5P TROPOMI over Turkey:
+https://www.mdpi.com/2504-3900/18/1/4/pdf
+(Proves strong correlation between NO2 and population density)
+
+Seminar given by NASA explaining "Data Analysis Tools for High Resolution Air Quality Satellite Datasets":
+https://arset.gsfc.nasa.gov/airquality/webinars/2018-hiresdatasets
+(in Python)
+
+Paper explaining AQI(Air Quality Index) and (Eclipsing, Ambiguity):
+http://www.indiaenvironmentportal.org.in/files/file/Air%20Quality%20Index.pdf
+[ (mistakes) - Air Quality Index
+   page 21 - Ip should be Cp ]
+
+data: https://giovanni.gsfc.nasa.gov/giovanni/
+
+Difference between PM(2.5) and PM(10):
+https://www.jagranjosh.com/general-knowledge/what-is-pm-25-and-pm10-and-how-they-affect-health-1528711006-1
+https://aqicn.org/faq/2013-02-02/why-is-pm25-often-higher-than-pm10/
+
+Reference free API used for geodecoding:
+https://nominatim.openstreetmap.org/reverse?format=json&lat=19.2100&lon=72.8183&zoom=18&addressdetails=1
+
+Relevant researchgate article:
+https://www.researchgate.net/post/Is_it_possible_to_monitor_air_quality_by_remote_sensing_satellite_imagery
+
+How to Forecast Air Pollution with Recurrent Neural Networks:
+https://www.freecodecamp.org/news/forecasting-air-pollution-recurrent-neural-networks/
+
+Relationship between AOD and PM2.5 in India:
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3237057/
+http://www.aaqr.org/files/article/6717/4_AAQR-17-12-AC3-0568_25-37.pdf
+
+Dataset(s):
+https://giovanni.gsfc.nasa.gov/giovanni/
+https://s5phub.copernicus.eu/dhus/#/home
+https://github.com/robmarkcole/satellite-image-deep-learning#techniques
+
+Information about sentinel-5p data:
+https://sentinel.esa.int/web/sentinel/missions/sentinel-5p/data-products 
+
+Loading and exploring sentinel-5p data:
+http://www.acgeospatial.co.uk/sentinel-5p-and-python/ (https://github.com/acgeospatial/Sentinel-5P)
+https://github.com/DataJavelin/Exploring-Sentinel5p
+https://earth.esa.int/web/sentinel/technical-guides/sentinel-5p/level-2/products/main-variables (Level-2 Products Description - Main Variables)
+
+Trouble installing Basemap, see:
+Python basemap module impossible to import - https://stackoverflow.com/a/40455847/7543474
+
+Trouble installing pyhdf, see:
+https://stackoverflow.com/a/18758785/7543474
+
+More info:
+>> Levels
+Satellite data is available at different stages (or levels) of processing, going from raw data collected from the satellite to polished products that visualize information. NASA takes the data from satellites and processes it to make it more usable for a broad array of applications. There is a set of terminology that NASA uses to refer to the levels of processing it conducts: 
+Level 0 & 1 is the raw instrument data that may be time-referenced. It is the most difficult to use. 
+Level 2 is Level 1 data that has been converted into a geophysical quantity through a computer algorithm (known as retrieval). 
+        This data is geo-referenced and calibrated. 
+Level 3 is Level 2 data that has been mapped on a uniform space-time grid and quality controlled. 
+Level 4  is Level 3 data that has been combined with models or other instrument data.
+Level 3 & 4 data is the easiest to use.
+
+>> Remote Sensing Advantages
+1. Provides information where there are no ground-based measurements
+2. Provides globally consistent observations
+3. Can provide direction on where to place ground-based sensors
+4. Provides continuous monitoring of our planet
+
+>> Remote Sensing Disadvantages
+1. It is very difficult to obtain high spectral, spatial, temporal, and radiometric resolution all at the same time:
+   Satellites with low spatial resolution tend to have high temporal resolution, 
+   and satellites with high spatial resolution tend to have low temporal resolution
+2. Large amounts of data in a variety of formats can lead to more time and processing
+3. Applying satellite data may require additional processing, visualization, and other tools

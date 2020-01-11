@@ -1,0 +1,16 @@
+Latitudinal and longitudinal extent of India
+
+Latitudinal extent=8º4‛N to 37º6‛ N
+Longitudinal extent=68º7‛E to 97º25‛ N
+
+So, for all the latitudes found in satellite-data:
+we need to - 
+lons[lons <= 68.7] = np.nan
+lons[lons >= 97.25] = np.nan
+
+lats[lats <= 8.4] = np.nan
+lats[lats >= 37.6] = np.nan
+
+From sentinel-documentation:
+For CH4:
+It is recommended to use TROPOMI CH4 data associated with a quality assurance value qa_value > 0.5
