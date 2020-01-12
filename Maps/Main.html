@@ -24,6 +24,9 @@
               top: 603px;
               left: 1177px;
         }
+        .leaflet-heatmap-layer {
+opacity: 1;
+}
     </style>
 </head>
 
@@ -145,15 +148,33 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Google maps</a>
+                  <a href="#">HeatMap</a>
                 </li>
                 <li>
-                  <a href="#">Open street map</a>
+                  <a href="clust2.html">Hotspot Maps</a>
                 </li>
               </ul>
             </div>
           </li>
-      
+          <li class="sidebar-dropdown">
+            <a href="#">
+              <i class="fa fa-globe"></i>
+              <span>Map City points</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li>
+                  <a href="#" onclick="map.setView([19.0760, 72.8777], 7);" >Mumbai</a>
+                </li>
+                <li>
+                  <a href="#" onclick="map.setView([28.7041, 77.1025], 7);" >Delhi</a>
+                </li>
+                <li>
+                  <a href="#" onclick="map.setView([12.9716, 77.5946], 7);" >Banglore</a>
+                </li>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
       <!-- sidebar-menu  -->
