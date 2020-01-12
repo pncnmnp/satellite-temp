@@ -102,13 +102,35 @@ class Hotspot:
 		for index in range(len(xi)):
 			color_val = modified_labels[index]
 			if color_val != -1:
-				m.scatter(xi[index], yi[index], color=colors[color_val])
+				m.scatter(xi[index], yi[index], color=colors[color_val], s=2)
 		plt.legend()
 		plt.savefig("foo.png")
 
+	def X_to_json(self, X, labels):
+		# Excluding -1 values
+		total_labels = len(np.unique(labels)) - 1
+
+		lat_lon_mapping = dict()
+		for index in range(len(X)):
+			if labels[index] != -1:
+				try:
+					lat_lon_mapping[labels[index]] += [str(X[index][0]) + ", " + str(X[index][1])]
+				except:
+					lat_lon_mapping[labels[index]] = [str(X[index][0]) + ", " + str(X[index][1])]
+
+		return list(lat_lon_mapping.values())
+
+	def heatmap_json(self, X, wt):
+		x_wt = list()
+		for index in range(len(X)):
+			x_arr = [X[index][0], X[index][1], wt[index]]
+			x_wt.append(x_arr)
+
+		return x_wt
+
 if __name__ == '__main__':
 	obj = Hotspot()
-	df = obj.convert_and_save_nc("./no2/S5P_OFFL_L2__NO2____20191203T064154_20191203T082324_11079_01_010302_20191209T092015.nc", "PRODUCT", "data.csv", "nitrogendioxide_tropospheric_column_precision")
-	df = obj.filter_percentile(df, "nitrogendioxide_tropospheric_column_precision")
-	X, wt, clustering, labels = obj.clustering_dbscan(df, "nitrogendioxide_tropospheric_column_precision")
+	df = obj.convert_and_save_nc("./no2/S5P_OFFL_L2__NO2____20191203T064154_20191203T082324_11079_01_010302_20191209T092015.nc", "PRODUCT", "data_no2.csv", "nitrogendioxide_tropospheric_column")
+	df = obj.filter_percentile(df, "nitrogendioxide_tropospheric_column")
+	X, wt, clustering, labels = obj.clustering_dbscan(df, "nitrogendioxide_tropospheric_column")
 	obj.plot_clustering_dbscan(X, wt, clustering, labels)
