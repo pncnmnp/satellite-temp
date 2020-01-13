@@ -10,8 +10,7 @@
         return this instanceof t ? (this._canvas = i = "string" == typeof i ? document.getElementById(i) : i, this._ctx = i.getContext("2d"), this._width = i.width, this._height = i.height, this._max = 1, void this.clear()) : new t(i)
     }
     t.prototype = {
-    	defaultblur:100,
-        defaultRadius: 40,
+        defaultRadius: 10,
         defaultGradient: {
             .4: "blue",
             .6: "cyan",

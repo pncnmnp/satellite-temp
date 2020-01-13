@@ -43,9 +43,9 @@ opacity: 1;
 <a href="day6.html" class="sticky-divi-button" id="d2">Day 6</a>
 <a href="day5.html" class="sticky-divi-button" id="d3">Day 5</a>
 <a href="day4.html" class="sticky-divi-button" id="d4">Day 4</a>
-<a href="day3.html" class="sticky-divi-button active" id="d5">Day 3</a>
+<a href="day3.html" class="sticky-divi-button activ" id="d5">Day 3</a>
 <a href="day2.html" class="sticky-divi-button" id="d6">Day 2</a>
-<a href="main.html" class="sticky-divi-button" id="d7" id="active">Day 1</a>
+<a href="main.html" class="sticky-divi-button " id="d7">Day 1</a>
 
 </div> 
 
@@ -235,7 +235,11 @@ opacity: 1;
 <script src="p.js"></script>
 <script>
 
-var map = L.map('map').setView([20.5937, 78.9629], 5);
+var map = L.map('map', {
+    minZoom: 4,
+    maxZoom: 9
+}).setView([20.5937, 78.9629], 5);
+
 
 var tiles = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',

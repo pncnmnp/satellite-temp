@@ -492,10 +492,12 @@ body {
 }
 
 
+/*<----------------------------custom css------------------------->*/
+
   .sticky-divi-button {
 color: #ffffff; /* You can change font color */
-font-family: "Raleway";
-font-size: 18px;  /* You can change font size */
+
+font-size: 15px;  /* You can change font size */
 background-color: #343a40; /* You can change color button */
 border-radius: 4px;
 letter-spacing: 0.8px;
@@ -548,7 +550,7 @@ right: 740px;
 right: 880px;
 }
 
-.active ,sticky-divi-button{
+.activ ,sticky-divi-button{
 
     background-color: #565d63 !important;
     border: 3px inset #3ccee2 !important;
@@ -558,4 +560,10 @@ right: 880px;
 
 .time_nav{
   right: 100px;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+    background: #343a40 !important;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+    color: white;
 }
