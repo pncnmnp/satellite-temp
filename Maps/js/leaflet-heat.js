@@ -11,7 +11,7 @@
     }
     t.prototype = {
     	defaultblur:100,
-        defaultRadius: 30,
+        defaultRadius: 40,
         defaultGradient: {
             .4: "blue",
             .6: "cyan",

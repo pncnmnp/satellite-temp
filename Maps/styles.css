@@ -490,3 +490,72 @@ body {
 .chiller-theme .sidebar-footer>a:last-child {
     border-right: none;
 }
+
+
+  .sticky-divi-button {
+color: #ffffff; /* You can change font color */
+font-family: "Raleway";
+font-size: 18px;  /* You can change font size */
+background-color: #343a40; /* You can change color button */
+border-radius: 4px;
+letter-spacing: 0.8px;
+text-transform: uppercase;
+text-decoration: none;
+box-shadow: 0px 25px 28px -21px rgba(194,180,190,1);
+padding: 18px 2%;
+z-index: 10;
+position: fixed;
+    margin-right: 130px;
+
+
+}
+.sticky-divi-button:hover {
+ background-color: #565d63 !important;
+    border: 3px inset #3ccee2 !important;
+    padding: 15px 2%;
+    text-decoration: none;
+    color: white;
+}
+
+#d1{
+  bottom: 40px;
+right: 40px;
+}
+
+#d2{
+bottom: 40px;
+    right: 180px;
+}
+
+#d3{
+  bottom: 40px;
+right: 320px;
+}
+#d4{
+  bottom: 40px;
+right: 460px;
+}
+#d5{
+  bottom: 40px;
+right: 600px;
+}
+#d6{
+  bottom: 40px;
+right: 740px;
+}
+#d7{
+  bottom: 40px;
+right: 880px;
+}
+
+.active ,sticky-divi-button{
+
+    background-color: #565d63 !important;
+    border: 3px inset #3ccee2 !important;
+    padding: 15px 2%;
+
+}
+
+.time_nav{
+  right: 100px;
+}
