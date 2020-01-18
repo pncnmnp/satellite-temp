@@ -1,5 +1,6 @@
 import xarray as xr
 import pandas as pd
+import pickle
 import numpy as np
 import os.path
 from sklearn.cluster import DBSCAN
@@ -27,7 +28,17 @@ class Hotspot:
 	def remove_nan_csv(self, df, attr):
 		return df[np.isfinite(df[attr])]
 
+	def save_listX(self,X,filename):
+		filename='lists\\'+filename
+		file = open(filename, "w")
+
+
+		file.write(str(X))
+
 	def remove_non_lat_lon_data(self, df, lat_less_than, lat_greater_than, lon_less_than, lon_greater_than):
+		'''
+		Removes all the not required latitudes and longitudes
+		'''
 		return df[(df["latitude"] >= lat_greater_than) 
 		            & (df["latitude"] <= lat_less_than) 
 		            & (df["longitude"] >= lon_greater_than) 
@@ -45,7 +56,7 @@ class Hotspot:
 
 		return df
 
-	def filter_percentile(self, df, percentile_attr, percentile=0.99):
+	def filter_percentile(self, df, percentile_attr, percentile=0.995):
 		return df[df[percentile_attr] >= df[percentile_attr].quantile(percentile)]
 
 	def clustering_dbscan(self, df, conc_attr, eps=10, min_samples=2):
@@ -107,9 +118,11 @@ class Hotspot:
 		plt.savefig("foo.png")
 
 	def X_to_json(self, X, labels):
+		'''
+		Converting X and labels to a file
+		'''
 		# Excluding -1 values
-		total_labels = len(np.unique(labels)) - 1
-
+		# total_labels = len(np.unique(labels)) - 1
 		lat_lon_mapping = dict()
 		for index in range(len(X)):
 			if labels[index] != -1:
@@ -117,7 +130,6 @@ class Hotspot:
 					lat_lon_mapping[labels[index]] += [str(X[index][0]) + ", " + str(X[index][1])]
 				except:
 					lat_lon_mapping[labels[index]] = [str(X[index][0]) + ", " + str(X[index][1])]
-
 		return list(lat_lon_mapping.values())
 
 	def heatmap_json(self, X, wt):
@@ -130,7 +142,13 @@ class Hotspot:
 
 if __name__ == '__main__':
 	obj = Hotspot()
-	df = obj.convert_and_save_nc("./no2/S5P_OFFL_L2__NO2____20191203T064154_20191203T082324_11079_01_010302_20191209T092015.nc", "PRODUCT", "data_no2.csv", "nitrogendioxide_tropospheric_column")
-	df = obj.filter_percentile(df, "nitrogendioxide_tropospheric_column")
-	X, wt, clustering, labels = obj.clustering_dbscan(df, "nitrogendioxide_tropospheric_column")
+	path_to_NCfile ="./CO/S5P_OFFL_L2__CO_____20200109T064818_20200109T082948_11604_01_010302_20200110T203412.nc" 
+	df = obj.convert_and_save_nc(path_to_NCfile, "PRODUCT", "data_no2.csv", "carbonmonoxide_total_column")
+	# df = obj.read_csv('data_no2.csv')
+	df = obj.filter_percentile(df, "carbonmonoxide_total_column")
+	X, wt, clustering, labels = obj.clustering_dbscan(df, "carbonmonoxide_total_column")
+
+	listOfPoints = obj.X_to_json(X, labels)
+	print(len(listOfPoints))
+	obj.save_listX( listOfPoints ,'list1.txt')
 	obj.plot_clustering_dbscan(X, wt, clustering, labels)
